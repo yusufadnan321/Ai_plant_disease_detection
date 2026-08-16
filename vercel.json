@@ -7,10 +7,10 @@
     },
     "api": {
       "root": ".",
-      "entrypoint": "api/Dockerfile.vercel",
+      "entrypoint": "Dockerfile.vercel",
       "runtime": "container",
       "functions": {
-        "api/Dockerfile.vercel": {
+        "Dockerfile.vercel": {
           "maxDuration": 60
         }
       }
