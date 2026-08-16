@@ -1,7 +1,15 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "functions": {
-    "api/index.py": {
+  "experimentalServices": {
+    "web": {
+      "entrypoint": ".",
+      "framework": "vite",
+      "routePrefix": "/"
+    },
+    "api": {
+      "entrypoint": "api/index.py",
+      "framework": "fastapi",
+      "routePrefix": "/api",
       "maxDuration": 60,
       "includeFiles": "{ai/artifacts/best_model.weights.h5,ai/artifacts/class_names.json,ai/trainingdataset/plant_disease_dataset.csv}"
     }
