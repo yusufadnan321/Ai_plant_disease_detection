@@ -1,0 +1,13 @@
+*
+!requirements.txt
+!api/
+!api/**
+!ai/
+!ai/__init__.py
+!ai/api.py
+!ai/model.py
+!ai/artifacts/
+!ai/artifacts/best_model.weights.h5
+!ai/artifacts/class_names.json
+!ai/trainingdataset/
+!ai/trainingdataset/plant_disease_dataset.csv
