@@ -9,6 +9,7 @@
       "root": ".",
       "entrypoint": "api/index.py",
       "framework": "fastapi",
+      "runtime": "python3.12",
       "functions": {
         "api/index.py": {
           "maxDuration": 60,
