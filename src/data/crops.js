@@ -33,15 +33,13 @@ export const supportedCrops = [
 
 export const cropOptions = [
   'Unknown',
+  'Apple',
   'Rice',
   'Tomato',
   'Potato',
-  'Corn',
-  'Banana',
-  'Mango',
-  'Eggplant',
-  'Chili',
 ];
 
 export const ACCEPTED_IMAGE_TYPES = ['image/jpeg', 'image/jpg', 'image/png'];
-export const MAX_IMAGE_SIZE_MB = 10;
+// Vercel Functions have a 4.5 MB request-body limit. Four MB leaves room for
+// multipart form metadata while preserving the existing upload flow.
+export const MAX_IMAGE_SIZE_MB = 4;

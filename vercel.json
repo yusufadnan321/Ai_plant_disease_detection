@@ -1,0 +1,10 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "functions": {
+    "api/index.py": {
+      "maxDuration": 60,
+      "includeFiles": "{ai/artifacts/best_model.weights.h5,ai/artifacts/class_names.json,ai/trainingdataset/plant_disease_dataset.csv}",
+      "excludeFiles": "{.venv/**,.tmp/**,dist/**,node_modules/**,ai/artifacts/*.log,ai/artifacts/*.png,ai/artifacts/*.csv,ai/artifacts/*split*,ai/artifacts/*history*,ai/artifacts/*status*,ai/run_training.py,ai/predict.py,ai/README.md,ai/trainingdataset/apple/**,ai/trainingdataset/potato/**,ai/trainingdataset/Rice/**,ai/trainingdataset/tomato/**}"
+    }
+  }
+}

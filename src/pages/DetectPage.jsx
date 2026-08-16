@@ -122,17 +122,26 @@ export default function DetectPage() {
           disease_name: result.diseaseName,
           disease_id: result.diseaseId,
           is_healthy: result.isHealthy,
-          severity: result.severity,
           confidence: result.confidence,
           image_url: preview,
         });
       } catch {
         /* prediction log is best-effort */
       }
-      toast.success(result.isHealthy ? 'Plant looks healthy!' : 'Disease detected — view your results.');
+      if (result.cropMismatch) {
+        toast.error(`Crop mismatch: selected ${result.selectedCrop}, image appears to be ${result.detectedCrop}.`);
+      } else {
+        toast.success(
+          result.isUncertain
+          ? 'The result is uncertain — try another clear image.'
+          : result.isHealthy
+            ? 'Plant looks healthy!'
+            : 'Disease detected — view your results.'
+        );
+      }
       setTimeout(() => navigate(`/result?id=${entry.id}`), 500);
     } catch (err) {
-      toast.error('Analysis failed. Please try again.');
+      toast.error(err instanceof Error ? err.message : 'Analysis failed. Please try again.');
       setAnalyzing(false);
     }
   };

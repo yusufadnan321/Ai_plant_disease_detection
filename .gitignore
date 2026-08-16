@@ -7,6 +7,14 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
+.venv/
+.tmp/
+ai/artifacts/*
+!ai/artifacts/best_model.weights.h5
+!ai/artifacts/class_names.json
+ai/test_run/
+__pycache__/
+*.pyc
 dist
 dist-ssr
 *.local
@@ -21,3 +29,8 @@ dist-ssr
 *.sln
 *.sw?
 .env
+
+# Keep the original image dataset local. Only the small disease-information
+# files are deployment inputs and may be committed.
+ai/trainingdataset/**
+!ai/trainingdataset/plant_disease_dataset.csv

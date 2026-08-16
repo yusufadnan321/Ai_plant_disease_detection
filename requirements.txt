@@ -1,0 +1,6 @@
+# Production-only dependencies for the Vercel Python Function.
+tensorflow==2.18.1
+numpy==2.0.2
+Pillow==11.3.0
+fastapi==0.141.1
+python-multipart==0.0.32
